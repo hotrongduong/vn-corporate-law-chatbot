@@ -1,0 +1,12 @@
+Django>=4.2,<5.0
+psycopg2-binary
+python-dotenv
+
+# Embedding processing and Qdrant connection
+qdrant-client
+sentence-transformers
+torch
+requests
+
+# google gemini
+google-generativeai
