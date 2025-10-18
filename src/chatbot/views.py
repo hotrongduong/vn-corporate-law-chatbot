@@ -104,7 +104,7 @@ class ChatbotAPIView(View):
                     context_parts.append(f"{context_prefix}\n{p.content}")
                 context = "\n\n".join(context_parts)
                 prompt = f"""Dựa vào các trích đoạn sau từ Luật Doanh nghiệp Việt Nam: {context} 
-                Hãy trả lời câu hỏi sau của người dùng một cách cực kìkì chi tiết, đầy đủ, 
+                Hãy trả lời câu hỏi sau của người dùng một chi tiết, đầy đủ, đúng trọng tâm và 
                 chính xác, không cắt bớt và CHỈ sử dụng thông tin từ các trích đoạn đã cung cấp. 
                 Luôn trả lời bằng tiếng Việt. Nếu thông tin không có trong trích đoạn, 
                 hãy trả lời "Tôi không tìm thấy thông tin liên quan trong các điều khoản được cung cấp.". 
