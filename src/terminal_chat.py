@@ -5,16 +5,16 @@ import sys
 import time 
 from dotenv import load_dotenv
 
-# Tìm thư mục gốc của dự án
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-dotenv_path = os.path.join(project_root, '.env')
+# # Tìm thư mục gốc của dự án
+# project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# dotenv_path = os.path.join(project_root, '.env')
 
-# Tải file .env nếu tồn tại
-if os.path.exists(dotenv_path):
-    load_dotenv(dotenv_path=dotenv_path)
-    # print(f"DEBUG: Đã tải biến môi trường từ: {dotenv_path}")
-else:
-    print(f"Cảnh báo: Không tìm thấy file .env tại {dotenv_path}")
+# # Tải file .env nếu tồn tại
+# if os.path.exists(dotenv_path):
+#     load_dotenv(dotenv_path=dotenv_path)
+#     # print(f"DEBUG: Đã tải biến môi trường từ: {dotenv_path}")
+# else:
+#     print(f"Cảnh báo: Không tìm thấy file .env tại {dotenv_path}")
 
 # --- Cấu hình API Endpoint ---
 CHATBOT_API_URL = os.getenv("CHATBOT_API_URL", "http://web:8000/api/chatbot/ask/")
@@ -24,7 +24,7 @@ def ask_chatbot(question):
     payload = json.dumps({"question": question})
     headers = {'Content-Type': 'application/json'}
 
-    print(f"DEBUG: Đang gửi yêu cầu đến {CHATBOT_API_URL}")
+    # print(f"DEBUG: Đang gửi yêu cầu đến {CHATBOT_API_URL}")
     start_time = time.time() # <-- Bắt đầu đếm thời gian
 
     try:
@@ -71,7 +71,7 @@ def ask_chatbot(question):
 if __name__ == "__main__":
     print("\n🤖 Chatbot Luật Doanh nghiệp sẵn sàng!")
     print("   Nhập câu hỏi của bạn hoặc gõ 'quit' để thoát.")
-    print("-" * 30)
+    print("=" * 70)
 
     while True:
         try:
@@ -80,7 +80,7 @@ if __name__ == "__main__":
                 print("\n👋 Tạm biệt!")
                 break
 
-            print("\n⏳ Đang tìm kiếm và tạo câu trả lời...")
+            # print("\n⏳ Đang tìm kiếm và tạo câu trả lời...")
             bot_response, duration = ask_chatbot(user_input) # <-- Nhận cả thời gian
             print(f"\n🤖 Chatbot: {bot_response}")
             print(f"   (Thời gian phản hồi: {duration:.2f} giây)") # <-- Hiển thị thời gian
